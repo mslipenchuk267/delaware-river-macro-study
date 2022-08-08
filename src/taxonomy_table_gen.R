@@ -5,7 +5,7 @@ library(stringr)
 # Load Data -------------------------------------------------------------------
 taxonomy_table <- read.csv(file.path(getwd(), "data", "taxonomy_table.csv"))
 
-# Get Species Data ------------------------------------------------------------
+# Get Taxonomy ----------------------------------------------------------------
 taxonomy_table <- taxonomy_table %>% 
   mutate(taxonomy = paste(phylum, class, sub_class, order, family, sep = " ")) %>% 
   mutate(taxonomy = trimws(taxonomy, whitespace = "[ ]")) %>% 
